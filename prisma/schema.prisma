@@ -21,22 +21,27 @@ model users {
 }
 
 model teddys {
-  id                 String @id @default(auto()) @map("_id") @db.ObjectId
-  hex                String
-  animal_image_url   String
-  accesory_image_url String
-  user_id            String @db.ObjectId
-  user               users  @relation(fields: [user_id], references: [id])
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  hex          String
+  user_id      String      @db.ObjectId
+  animal_id    String      @db.ObjectId
+  accessory_id String      @db.ObjectId
+  active       Boolean     @default(true)
+  user         users       @relation(fields: [user_id], references: [id])
+  animal       animals     @relation(fields: [animal_id], references: [id])
+  accessory    accessories @relation(fields: [accessory_id], references: [id])
 }
 
 model animals {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   image_url   String
   description String
+  teddys      teddys[]
 }
 
-model accesories {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+model accessories {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   image_url   String
   description String
+  teddys      teddys[]
 }
