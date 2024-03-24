@@ -30,11 +30,13 @@ model teddys {
 }
 
 model animals {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  image_url String
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  image_url   String
+  description String
 }
 
 model accesories {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  image_url String
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  image_url   String
+  description String
 }
