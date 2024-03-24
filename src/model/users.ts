@@ -1,6 +1,6 @@
 import prisma from '../database/connection';
 
-export class AuthModel {
+export class UsersModel {
     constructor() { }
 
     public getUserByEmailAndPassword = async (email: string) => {

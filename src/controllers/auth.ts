@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { AuthModel } from '../model/auth';
+import { UsersModel } from '../model/users';
 import jwt from "jsonwebtoken";
 import app from '../app';
 import bcryptjs from 'bcryptjs';
@@ -10,9 +10,9 @@ type loginPayload = {
 }
 
 export class AuthController {
-    private authModel: AuthModel;
+    private authModel: UsersModel;
 
-    constructor(authModel: AuthModel = new AuthModel()) {
+    constructor(authModel: UsersModel = new UsersModel()) {
         this.authModel = authModel;
     }
 

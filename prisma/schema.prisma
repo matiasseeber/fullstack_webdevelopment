@@ -28,3 +28,13 @@ model teddys {
   user_id            String @db.ObjectId
   user               users  @relation(fields: [user_id], references: [id])
 }
+
+model animals {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  image_url String
+}
+
+model accesories {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  image_url String
+}
