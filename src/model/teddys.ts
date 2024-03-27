@@ -40,6 +40,7 @@ export class TeddysModel {
     public getMostChosenAnimals = async () => {
         const result = await prisma.teddys.groupBy({
             by: ["animal_id"],
+            where: { active: true },
             _count: {
                 _all: true
             },

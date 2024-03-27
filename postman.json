@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "b0afd504-d996-4026-bac4-364cfe59df89",
+		"name": "Fullstack web dev backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17320280"
+	},
+	"item": [
+		{
+			"name": "Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get teddys customization options",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYzYjI1M2VkYWM0MjYzMjY1N2RmNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkRk0wNlkvVU4zaTdFZFIzVUUxcDZVT3NZVFhqZ1pqQTh4cmZTNmk2Ljc1NkZqVDNIL2JyRm0iLCJpYXQiOjE3MTE1Nzc5NDAsImV4cCI6MTcxMTU4MTU0MH0.JtGfvWzUalqbMAfeJvJZve81TTgHp4OnZ2rV7whziVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/teddys/resources",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"teddys",
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mariabelen@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user teddy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYzYjI1M2VkYWM0MjYzMjY1N2RmNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkRk0wNlkvVU4zaTdFZFIzVUUxcDZVT3NZVFhqZ1pqQTh4cmZTNmk2Ljc1NkZqVDNIL2JyRm0iLCJpYXQiOjE3MTE1Nzc5NDAsImV4cCI6MTcxMTU4MTU0MH0.JtGfvWzUalqbMAfeJvJZve81TTgHp4OnZ2rV7whziVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"animal_id\": \"65ff9b905ccd2144c8b393d9\",\r\n    \"accessory_id\": \"65ff99185ccd2144c8b393d5\",\r\n    \"hex\": \"#FFFFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/teddys",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"teddys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getuser teddys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYzYjI1M2VkYWM0MjYzMjY1N2RmNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkRk0wNlkvVU4zaTdFZFIzVUUxcDZVT3NZVFhqZ1pqQTh4cmZTNmk2Ljc1NkZqVDNIL2JyRm0iLCJpYXQiOjE3MTE1Nzc5NDAsImV4cCI6MTcxMTU4MTU0MH0.JtGfvWzUalqbMAfeJvJZve81TTgHp4OnZ2rV7whziVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"animal_id\": \"65ff985c5ccd2144c8b393d3\",\r\n    \"accessory_id\": \"65ff99185ccd2144c8b393d5\",\r\n    \"hex\": \"#FFFFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/teddys",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"teddys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete teddy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYzYjI1M2VkYWM0MjYzMjY1N2RmNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkRk0wNlkvVU4zaTdFZFIzVUUxcDZVT3NZVFhqZ1pqQTh4cmZTNmk2Ljc1NkZqVDNIL2JyRm0iLCJpYXQiOjE3MTE1Nzc5NDAsImV4cCI6MTcxMTU4MTU0MH0.JtGfvWzUalqbMAfeJvJZve81TTgHp4OnZ2rV7whziVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"animal_id\": \"65ff985c5ccd2144c8b393d3\",\r\n    \"accessory_id\": \"65ff99185ccd2144c8b393d5\",\r\n    \"hex\": \"#FFFFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/teddys/66049d4c2d274e0647b2a40f",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"teddys",
+						"66049d4c2d274e0647b2a40f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYzYjI1M2VkYWM0MjYzMjY1N2RmNiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkRk0wNlkvVU4zaTdFZFIzVUUxcDZVT3NZVFhqZ1pqQTh4cmZTNmk2Ljc1NkZqVDNIL2JyRm0iLCJpYXQiOjE3MTE1Nzc5NDAsImV4cCI6MTcxMTU4MTU0MH0.JtGfvWzUalqbMAfeJvJZve81TTgHp4OnZ2rV7whziVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"animal_id\": \"65ff985c5ccd2144c8b393d3\",\r\n    \"accessory_id\": \"65ff99185ccd2144c8b393d5\",\r\n    \"hex\": \"#FFFFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/teddys/dashboard",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"teddys",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
