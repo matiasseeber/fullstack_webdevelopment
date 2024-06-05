@@ -43,17 +43,11 @@ export class TeddysModel {
             where: { active: true },
             _count: {
                 _all: true
-            },
-            orderBy: {
-                _count: {
-                    animal_id: "desc"
-                }
-            },
-            take: 3
+            }
         });
 
         const animalsInfo = await prisma.animals.findMany({ where: { id: { in: result.map((item) => item.animal_id) } } });
-        return animalsInfo.map((animal) => {
+        return animalsInfo.slice(0, 3).map((animal) => {
             return {
                 ...animal,
                 count: result.find((result) => result.animal_id === animal.id)?._count._all
